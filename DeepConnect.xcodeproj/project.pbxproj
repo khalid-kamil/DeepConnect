@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E9C9840E2AB5FB7200F9FF5A /* DeepConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9840D2AB5FB7200F9FF5A /* DeepConnectApp.swift */; };
-		E9C984102AB5FB7200F9FF5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9840F2AB5FB7200F9FF5A /* ContentView.swift */; };
+		E9C984102AB5FB7200F9FF5A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9840F2AB5FB7200F9FF5A /* GameView.swift */; };
 		E9C984122AB5FB7600F9FF5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C984112AB5FB7600F9FF5A /* Assets.xcassets */; };
 		E9C984152AB5FB7600F9FF5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C984142AB5FB7600F9FF5A /* Preview Assets.xcassets */; };
 		E9C9841C2AB60B0300F9FF5A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9841B2AB60B0300F9FF5A /* Question.swift */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		E9C9840A2AB5FB7200F9FF5A /* DeepConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C9840D2AB5FB7200F9FF5A /* DeepConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepConnectApp.swift; sourceTree = "<group>"; };
-		E9C9840F2AB5FB7200F9FF5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E9C9840F2AB5FB7200F9FF5A /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		E9C984112AB5FB7600F9FF5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9C984142AB5FB7600F9FF5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E9C9841B2AB60B0300F9FF5A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				E9C9840D2AB5FB7200F9FF5A /* DeepConnectApp.swift */,
-				E9C9840F2AB5FB7200F9FF5A /* ContentView.swift */,
+				E9C9840F2AB5FB7200F9FF5A /* GameView.swift */,
 				E9C984212AB617AC00F9FF5A /* View Models */,
 				E9C9841E2AB616FF00F9FF5A /* Models */,
 				E9C984112AB5FB7600F9FF5A /* Assets.xcassets */,
@@ -182,7 +182,7 @@
 			files = (
 				E9C984202AB6179400F9FF5A /* GameViewModel.swift in Sources */,
 				E9C9841C2AB60B0300F9FF5A /* Question.swift in Sources */,
-				E9C984102AB5FB7200F9FF5A /* ContentView.swift in Sources */,
+				E9C984102AB5FB7200F9FF5A /* GameView.swift in Sources */,
 				E9C9840E2AB5FB7200F9FF5A /* DeepConnectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

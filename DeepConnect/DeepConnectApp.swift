@@ -4,7 +4,7 @@ import SwiftUI
 struct DeepConnectApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      GameView()
     }
   }
 }
