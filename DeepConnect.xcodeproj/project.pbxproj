@@ -11,6 +11,7 @@
 		E9C984102AB5FB7200F9FF5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9840F2AB5FB7200F9FF5A /* ContentView.swift */; };
 		E9C984122AB5FB7600F9FF5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C984112AB5FB7600F9FF5A /* Assets.xcassets */; };
 		E9C984152AB5FB7600F9FF5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C984142AB5FB7600F9FF5A /* Preview Assets.xcassets */; };
+		E9C9841C2AB60B0300F9FF5A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9841B2AB60B0300F9FF5A /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		E9C9840F2AB5FB7200F9FF5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9C984112AB5FB7600F9FF5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9C984142AB5FB7600F9FF5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E9C9841B2AB60B0300F9FF5A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				E9C9840D2AB5FB7200F9FF5A /* DeepConnectApp.swift */,
 				E9C9840F2AB5FB7200F9FF5A /* ContentView.swift */,
+				E9C9841B2AB60B0300F9FF5A /* Question.swift */,
 				E9C984112AB5FB7600F9FF5A /* Assets.xcassets */,
 				E9C984132AB5FB7600F9FF5A /* Preview Content */,
 			);
@@ -74,6 +77,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9C984182AB5FB7600F9FF5A /* Build configuration list for PBXNativeTarget "DeepConnect" */;
 			buildPhases = (
+				E9C9841D2AB60FBC00F9FF5A /* ShellScript */,
 				E9C984062AB5FB7200F9FF5A /* Sources */,
 				E9C984072AB5FB7200F9FF5A /* Frameworks */,
 				E9C984082AB5FB7200F9FF5A /* Resources */,
@@ -132,11 +136,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E9C9841D2AB60FBC00F9FF5A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif [ -f ~/com.raywenderlich.swiftlint.yml ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint --no-cache --config ~/com.raywenderlich.swiftlint.yml\n  fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E9C984062AB5FB7200F9FF5A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C9841C2AB60B0300F9FF5A /* Question.swift in Sources */,
 				E9C984102AB5FB7200F9FF5A /* ContentView.swift in Sources */,
 				E9C9840E2AB5FB7200F9FF5A /* DeepConnectApp.swift in Sources */,
 			);
