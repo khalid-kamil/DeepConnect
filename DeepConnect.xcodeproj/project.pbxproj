@@ -56,7 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				E9C9840D2AB5FB7200F9FF5A /* DeepConnectApp.swift */,
-				E9C9840F2AB5FB7200F9FF5A /* GameView.swift */,
+				E9C984222AB6310100F9FF5A /* Views */,
 				E9C984212AB617AC00F9FF5A /* View Models */,
 				E9C9841E2AB616FF00F9FF5A /* Models */,
 				E9C984112AB5FB7600F9FF5A /* Assets.xcassets */,
@@ -87,6 +87,14 @@
 				E9C9841F2AB6179400F9FF5A /* GameViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		E9C984222AB6310100F9FF5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9C9840F2AB5FB7200F9FF5A /* GameView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

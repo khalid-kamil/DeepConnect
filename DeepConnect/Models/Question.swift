@@ -1,10 +1,10 @@
 import Foundation
 
 /**
- An object representing a question.
+  An object representing a question.
 
- Primarily displayed in ``GameView``.
- */
+  Primarily displayed in ``GameView``.
+*/
 struct Question: Identifiable {
   // MARK: - Properties
   let id = UUID()
