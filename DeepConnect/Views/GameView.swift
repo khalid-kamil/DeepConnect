@@ -7,20 +7,16 @@ struct GameView: View {
   var body: some View {
     NavigationStack {
       ZStack {
-        Color.brown
-          .ignoresSafeArea()
-        cardDeck
-        if game.state == .ended {
-          VStack {
-            Text("Game Over")
-            Text("Skipped Questions: \(game.skippedQuestionCount)")
-            Text("Completed Questions: \(game.completedQuestionCount)")
-          }
-        }
+        background
+        gameOverCard
+        questionCards
+      }
+      .onAppear {
+        game.startGame()
       }
       .toolbar(content: {
         ToolbarItem(placement: .navigationBarTrailing) {
-          Text("\(game.questionNumber) of \(game.questions.count)")
+          Text("\(game.questionNumber) of \(game.questionCount)")
             .opacity(game.state == .ended ? 0 : 1)
             .animation(
               .spring(), value: game.state == .ended)
@@ -39,9 +35,16 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 extension GameView {
-  var cardDeck: some View {
+  var background: some View {
+    Color.brown
+      .ignoresSafeArea()
+  }
+}
+
+extension GameView {
+  var questionCards: some View {
     ZStack {
-      ForEach(game.questions.reversed()) { question in
+      ForEach(game.questions) { question in
         SwipeableCardView(backgroundColor: .white, direction: $swipeDirection) {
           Text(question.prompt.uppercased())
             .font(.headline)
@@ -55,8 +58,50 @@ extension GameView {
       }
     }
     .frame(width: UIScreen.main.bounds.width)
-    .onAppear {
-      game.startGame()
+  }
+}
+
+extension GameView {
+  var gameOverCard: some View {
+    ZStack {
+      RoundedRectangle(cornerRadius: 16)
+        .fill(Color.lead)
+        .shadow(radius: 5)
+
+      VStack {
+        Spacer()
+        Text("Finished!".uppercased())
+          .font(.largeTitle)
+          .fontWeight(.bold)
+          .multilineTextAlignment(.center)
+        Spacer()
+        Text("Skipped: \(game.skippedQuestionCount)")
+          .font(.title3)
+          .fontWeight(.semibold)
+          .multilineTextAlignment(.center)
+        Text("Completed: \(game.completedQuestionCount)")
+          .font(.title3)
+          .fontWeight(.semibold)
+          .multilineTextAlignment(.center)
+        Spacer()
+        Spacer()
+        Button {
+          game.startGame()
+        } label: {
+          Text("Tap to play again".uppercased())
+            .font(.title2)
+            .fontWeight(.bold)
+            .foregroundColor(.deepRed)
+            .multilineTextAlignment(.center)
+        }
+
+        // TODO: Add animation to play again
+        Spacer()
+      }
+      .foregroundColor(.white)
+      .padding(40)
     }
+    .padding(32)
+    .aspectRatio(1.0, contentMode: .fit)
   }
 }

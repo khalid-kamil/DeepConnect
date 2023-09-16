@@ -64,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				E9C9840D2AB5FB7200F9FF5A /* DeepConnectApp.swift */,
-				E9C984232AB63C8200F9FF5A /* SwipeableCardView.swift */,
 				E9C9842A2AB6479100F9FF5A /* Extensions */,
 				E9C984272AB63DB800F9FF5A /* Enumerations */,
 				E9C984222AB6310100F9FF5A /* Views */,
@@ -104,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				E9C9840F2AB5FB7200F9FF5A /* GameView.swift */,
+				E9C984232AB63C8200F9FF5A /* SwipeableCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
