@@ -10,13 +10,20 @@ struct GameView: View {
         Color.brown
           .ignoresSafeArea()
         cardDeck
+        if game.state == .ended {
+          VStack {
+            Text("Game Over")
+            Text("Skipped Questions: \(game.skippedQuestionCount)")
+            Text("Completed Questions: \(game.completedQuestionCount)")
+          }
+        }
       }
       .toolbar(content: {
         ToolbarItem(placement: .navigationBarTrailing) {
           Text("\(game.questionNumber) of \(game.questions.count)")
-            .opacity(game.state == .started ? 1 : 0)
+            .opacity(game.state == .ended ? 0 : 1)
             .animation(
-              .interpolatingSpring(stiffness: 100, damping: 10), value: game.state == .started)
+              .spring(), value: game.state == .ended)
         }
       })
       .navigationTitle("Deep Connect")
@@ -42,8 +49,8 @@ extension GameView {
             .foregroundColor(.black)
             .padding(40)
             .blur(radius: swipeDirection != .none ? 4 : 0)
-        } completion: { direction in
-          print(direction)
+        } completion: { swipeDirection in
+          game.nextCard(with: swipeDirection)
         }
       }
     }
