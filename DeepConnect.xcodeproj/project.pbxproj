@@ -15,6 +15,7 @@
 		E9C984202AB6179400F9FF5A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9841F2AB6179400F9FF5A /* GameViewModel.swift */; };
 		E9C984242AB63C8200F9FF5A /* SwipeableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C984232AB63C8200F9FF5A /* SwipeableCardView.swift */; };
 		E9C984262AB63DA800F9FF5A /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C984252AB63DA800F9FF5A /* SwipeDirection.swift */; };
+		E9C984292AB640C200F9FF5A /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C984282AB640C200F9FF5A /* GameState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E9C9841F2AB6179400F9FF5A /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		E9C984232AB63C8200F9FF5A /* SwipeableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardView.swift; sourceTree = "<group>"; };
 		E9C984252AB63DA800F9FF5A /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
+		E9C984282AB640C200F9FF5A /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				E9C984252AB63DA800F9FF5A /* SwipeDirection.swift */,
+				E9C984282AB640C200F9FF5A /* GameState.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C984292AB640C200F9FF5A /* GameState.swift in Sources */,
 				E9C984262AB63DA800F9FF5A /* SwipeDirection.swift in Sources */,
 				E9C984202AB6179400F9FF5A /* GameViewModel.swift in Sources */,
 				E9C9841C2AB60B0300F9FF5A /* Question.swift in Sources */,

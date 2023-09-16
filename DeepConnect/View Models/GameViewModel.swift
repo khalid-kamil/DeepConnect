@@ -15,10 +15,3 @@ class GameViewModel: ObservableObject {
   // MARK: - Methods
 
 }
-
-enum GameState {
-  case notStarted
-  case instructions
-  case started
-  case ended
-}
