@@ -48,5 +48,8 @@ extension GameView {
       }
     }
     .frame(width: UIScreen.main.bounds.width)
+    .onAppear {
+      game.startGame()
+    }
   }
 }

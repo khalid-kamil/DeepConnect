@@ -16,6 +16,7 @@
 		E9C984242AB63C8200F9FF5A /* SwipeableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C984232AB63C8200F9FF5A /* SwipeableCardView.swift */; };
 		E9C984262AB63DA800F9FF5A /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C984252AB63DA800F9FF5A /* SwipeDirection.swift */; };
 		E9C984292AB640C200F9FF5A /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C984282AB640C200F9FF5A /* GameState.swift */; };
+		E9C9842C2AB647A000F9FF5A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9842B2AB647A000F9FF5A /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		E9C984232AB63C8200F9FF5A /* SwipeableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardView.swift; sourceTree = "<group>"; };
 		E9C984252AB63DA800F9FF5A /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
 		E9C984282AB640C200F9FF5A /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		E9C9842B2AB647A000F9FF5A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				E9C9840D2AB5FB7200F9FF5A /* DeepConnectApp.swift */,
 				E9C984232AB63C8200F9FF5A /* SwipeableCardView.swift */,
+				E9C9842A2AB6479100F9FF5A /* Extensions */,
 				E9C984272AB63DB800F9FF5A /* Enumerations */,
 				E9C984222AB6310100F9FF5A /* Views */,
 				E9C984212AB617AC00F9FF5A /* View Models */,
@@ -112,6 +115,14 @@
 				E9C984282AB640C200F9FF5A /* GameState.swift */,
 			);
 			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		E9C9842A2AB6479100F9FF5A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9C9842B2AB647A000F9FF5A /* Color.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 				E9C984202AB6179400F9FF5A /* GameViewModel.swift in Sources */,
 				E9C9841C2AB60B0300F9FF5A /* Question.swift in Sources */,
 				E9C984102AB5FB7200F9FF5A /* GameView.swift in Sources */,
+				E9C9842C2AB647A000F9FF5A /* Color.swift in Sources */,
 				E9C9840E2AB5FB7200F9FF5A /* DeepConnectApp.swift in Sources */,
 				E9C984242AB63C8200F9FF5A /* SwipeableCardView.swift in Sources */,
 			);
