@@ -12,6 +12,7 @@
 		E9C984122AB5FB7600F9FF5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C984112AB5FB7600F9FF5A /* Assets.xcassets */; };
 		E9C984152AB5FB7600F9FF5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C984142AB5FB7600F9FF5A /* Preview Assets.xcassets */; };
 		E9C9841C2AB60B0300F9FF5A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9841B2AB60B0300F9FF5A /* Question.swift */; };
+		E9C984202AB6179400F9FF5A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9841F2AB6179400F9FF5A /* GameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		E9C984112AB5FB7600F9FF5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9C984142AB5FB7600F9FF5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E9C9841B2AB60B0300F9FF5A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		E9C9841F2AB6179400F9FF5A /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,8 @@
 			children = (
 				E9C9840D2AB5FB7200F9FF5A /* DeepConnectApp.swift */,
 				E9C9840F2AB5FB7200F9FF5A /* ContentView.swift */,
-				E9C9841E2AB616FF00F9FF5A /* Model */,
+				E9C984212AB617AC00F9FF5A /* View Models */,
+				E9C9841E2AB616FF00F9FF5A /* Models */,
 				E9C984112AB5FB7600F9FF5A /* Assets.xcassets */,
 				E9C984132AB5FB7600F9FF5A /* Preview Content */,
 			);
@@ -70,12 +73,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E9C9841E2AB616FF00F9FF5A /* Model */ = {
+		E9C9841E2AB616FF00F9FF5A /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				E9C9841B2AB60B0300F9FF5A /* Question.swift */,
 			);
-			path = Model;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E9C984212AB617AC00F9FF5A /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				E9C9841F2AB6179400F9FF5A /* GameViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C984202AB6179400F9FF5A /* GameViewModel.swift in Sources */,
 				E9C9841C2AB60B0300F9FF5A /* Question.swift in Sources */,
 				E9C984102AB5FB7200F9FF5A /* ContentView.swift in Sources */,
 				E9C9840E2AB5FB7200F9FF5A /* DeepConnectApp.swift in Sources */,
