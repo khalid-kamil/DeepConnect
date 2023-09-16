@@ -55,7 +55,7 @@
 			children = (
 				E9C9840D2AB5FB7200F9FF5A /* DeepConnectApp.swift */,
 				E9C9840F2AB5FB7200F9FF5A /* ContentView.swift */,
-				E9C9841B2AB60B0300F9FF5A /* Question.swift */,
+				E9C9841E2AB616FF00F9FF5A /* Model */,
 				E9C984112AB5FB7600F9FF5A /* Assets.xcassets */,
 				E9C984132AB5FB7600F9FF5A /* Preview Content */,
 			);
@@ -68,6 +68,14 @@
 				E9C984142AB5FB7600F9FF5A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E9C9841E2AB616FF00F9FF5A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9C9841B2AB60B0300F9FF5A /* Question.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
