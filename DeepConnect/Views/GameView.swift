@@ -2,6 +2,7 @@ import SwiftUI
 
 struct GameView: View {
   @StateObject var game = GameViewModel()
+  @State private var offset = 0.0
 
   var body: some View {
     NavigationStack {
@@ -90,8 +91,6 @@ extension GameView {
             .foregroundColor(.deepRed)
             .multilineTextAlignment(.center)
         }
-
-        // TODO: Add animation to play again
         Spacer()
       }
       .foregroundColor(.white)
@@ -124,7 +123,7 @@ extension GameView {
 
 extension GameView {
   var welcomeCard: some View {
-    SwipeableCardView(backgroundColor: .lead, direction: .constant(.none)) {
+    SwipeableCardView(backgroundColor: .lead, direction: $game.swipeDirection) {
       VStack {
         Spacer()
         Image("DCLogo-white")
@@ -135,7 +134,6 @@ extension GameView {
         Text("Conversation Card Game".uppercased())
           .font(.footnote)
           .fontWeight(.regular)
-//          .foregroundColor(.gray)
           .multilineTextAlignment(.center)
         Spacer()
         Text("Swipe to open up".uppercased())
@@ -143,7 +141,6 @@ extension GameView {
           .fontWeight(.bold)
           .foregroundColor(.deepRed)
           .multilineTextAlignment(.center)
-        // TODO: Add animation to swipe text
         Spacer()
       }
       .foregroundColor(.white)
