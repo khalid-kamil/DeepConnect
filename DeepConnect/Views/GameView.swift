@@ -16,14 +16,7 @@ struct GameView: View {
       .onAppear {
         game.startGame()
       }
-      .toolbar(content: {
-        ToolbarItem(placement: .navigationBarTrailing) {
-          Text("\(game.questionNumber) of \(game.questionCount)")
-            .opacity(game.state == .ended ? 0 : 1)
-            .animation(
-              .spring(), value: game.state == .ended)
-        }
-      })
+      .toolbar(content: toolbarContent)
       .navigationTitle("Deep Connect")
       .navigationBarTitleDisplayMode(.inline)
     }
@@ -146,5 +139,17 @@ extension GameView {
     }
     .opacity(swipeDirection == .right ? 1 : 0)
     .frame(width: UIScreen.main.bounds.width)
+  }
+}
+
+extension GameView {
+  @ToolbarContentBuilder
+  func toolbarContent() -> some ToolbarContent {
+      ToolbarItem(placement: .navigationBarTrailing) {
+        Text("\(game.questionNumber) of \(game.questionCount)")
+          .opacity(game.state == .ended ? 0 : 1)
+          .animation(
+            .spring(), value: game.state == .ended)
+      }
   }
 }
