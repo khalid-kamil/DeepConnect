@@ -11,13 +11,11 @@ struct GameView: View {
         questionCards
         if game.state == .startMenu {
           instructionsCard
+          welcomeCard
         }
       }
       .overlay(nextOverlay)
       .overlay(skipOverlay)
-//      .onAppear {
-//        game.startGame()
-//      }
       .toolbar(content: toolbarContent)
       .navigationTitle("Deep Connect")
       .navigationBarTitleDisplayMode(.inline)
@@ -34,7 +32,7 @@ struct ContentView_Previews: PreviewProvider {
 
 extension GameView {
   var background: some View {
-    Color.brown
+    Color(.secondarySystemBackground)
       .ignoresSafeArea()
   }
 }
@@ -118,10 +116,39 @@ extension GameView {
       .multilineTextAlignment(.center)
       .foregroundColor(.white)
       .padding(40)
-      .blur(radius: game.swipeDirection != .none ? 4 : 0)
     } completion: { _ in
       game.dismissInstructionsCard()
     }
+  }
+}
+
+extension GameView {
+  var welcomeCard: some View {
+    SwipeableCardView(backgroundColor: .lead, direction: .constant(.none)) {
+      VStack {
+        Spacer()
+        Image("DCLogo-white")
+          .resizable()
+          .scaledToFit()
+          .frame(width: 200, height: 100)
+
+        Text("Conversation Card Game".uppercased())
+          .font(.footnote)
+          .fontWeight(.regular)
+//          .foregroundColor(.gray)
+          .multilineTextAlignment(.center)
+        Spacer()
+        Text("Swipe to open up".uppercased())
+          .font(.title2)
+          .fontWeight(.bold)
+          .foregroundColor(.deepRed)
+          .multilineTextAlignment(.center)
+        // TODO: Add animation to swipe text
+        Spacer()
+      }
+      .foregroundColor(.white)
+      .padding(40)
+    } completion: { _ in }
   }
 }
 
@@ -170,6 +197,8 @@ extension GameView {
   func toolbarContent() -> some ToolbarContent {
     ToolbarItem(placement: .navigationBarTrailing) {
       Text("\(game.questionNumber) of \(game.questionCount)")
+        .font(.headline)
+        .foregroundColor(.deepRed)
         .opacity(game.state == .started ? 1 : 0)
         .animation(
           .spring(), value: game.state == .started)
