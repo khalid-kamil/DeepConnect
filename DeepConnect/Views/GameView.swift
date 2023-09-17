@@ -195,6 +195,18 @@ extension GameView {
 extension GameView {
   @ToolbarContentBuilder
   func toolbarContent() -> some ToolbarContent {
+    ToolbarItem(placement: .navigationBarLeading) {
+      Label("Restart", systemImage: "gobackward")
+        .fontWeight(.semibold)
+        .labelStyle(.iconOnly)
+        .foregroundColor(.deepRed)
+        .opacity(game.state == .started ? 1 : 0)
+        .animation(.spring(), value: game.state == .started)
+        .onTapGesture {
+          game.startGame()
+        }
+    }
+
     ToolbarItem(placement: .navigationBarTrailing) {
       Text("\(game.questionNumber) of \(game.questionCount)")
         .font(.headline)
