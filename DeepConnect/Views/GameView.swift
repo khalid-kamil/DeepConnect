@@ -33,8 +33,11 @@ struct ContentView_Previews: PreviewProvider {
 
 extension GameView {
   var background: some View {
-    Color(.secondarySystemBackground)
+    Image("polkadots")
+      .resizable()
+      .scaledToFill()
       .ignoresSafeArea()
+      .blur(radius: 8)
   }
 }
 
@@ -55,6 +58,7 @@ extension GameView {
       }
     }
     .frame(width: UIScreen.main.bounds.width)
+    .offset(x: 8, y: 8)
   }
 }
 
@@ -97,7 +101,10 @@ extension GameView {
       .padding(40)
     }
     .padding(32)
+    .shadow(radius: 6)
     .aspectRatio(1.0, contentMode: .fit)
+    .frame(width: UIScreen.main.bounds.width)
+    .offset(x: 12, y: 12)
   }
 }
 
@@ -105,11 +112,30 @@ extension GameView {
   var instructionsCard: some View {
     SwipeableCardView(backgroundColor: Color("Lead"), direction: $game.swipeDirection) {
       VStack {
+        Spacer()
         Text("How to play".uppercased())
           .font(.title3)
           .fontWeight(.heavy)
           .padding(.bottom, 24)
         Text(game.instructions.uppercased())
+        Spacer()
+        HStack {
+          Group {
+            Image(systemName: "arrow.left")
+            Text("Skip")
+          }
+          .foregroundColor(.gray)
+          Spacer()
+          Image(systemName: "hand.point.up.left")
+            .font(.title)
+            .fontWeight(.semibold)
+          Spacer()
+          Group {
+            Text("Next")
+            Image(systemName: "arrow.right")
+          }
+          .foregroundColor(.green)
+        }
       }
       .font(.headline)
       .multilineTextAlignment(.center)
@@ -118,12 +144,15 @@ extension GameView {
     } completion: { _ in
       game.dismissInstructionsCard()
     }
+    .frame(width: UIScreen.main.bounds.width)
+    .offset(x: 4, y: 4)
+    .shadow(radius: 6)
   }
 }
 
 extension GameView {
   var welcomeCard: some View {
-    SwipeableCardView(backgroundColor: .lead, direction: $game.swipeDirection) {
+    SwipeableCardView(backgroundColor: .lead, direction: .constant(.none)) {
       VStack {
         Spacer()
         Image("DCLogo-white")
@@ -136,6 +165,13 @@ extension GameView {
           .fontWeight(.regular)
           .multilineTextAlignment(.center)
         Spacer()
+        HStack {
+          Image(systemName: "hand.point.up.left")
+          Image(systemName: "arrow.right")
+        }
+        .font(.title2)
+        .fontWeight(.bold)
+        .foregroundColor(.deepRed)
         Text("Swipe to open up".uppercased())
           .font(.title2)
           .fontWeight(.bold)
@@ -146,6 +182,8 @@ extension GameView {
       .foregroundColor(.white)
       .padding(40)
     } completion: { _ in }
+      .frame(width: UIScreen.main.bounds.width)
+      .shadow(radius: 6)
   }
 }
 

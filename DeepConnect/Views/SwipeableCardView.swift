@@ -12,7 +12,6 @@ struct SwipeableCardView<Content: View>: View {
     ZStack {
       RoundedRectangle(cornerRadius: 16)
         .fill(backgroundColor)
-        .shadow(radius: 5)
       content
     }
     .padding(32)
