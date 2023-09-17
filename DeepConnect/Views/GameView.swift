@@ -9,12 +9,15 @@ struct GameView: View {
         background
         gameOverCard
         questionCards
+        if game.state == .startMenu {
+          instructionsCard
+        }
       }
       .overlay(nextOverlay)
       .overlay(skipOverlay)
-      .onAppear {
-        game.startGame()
-      }
+//      .onAppear {
+//        game.startGame()
+//      }
       .toolbar(content: toolbarContent)
       .navigationTitle("Deep Connect")
       .navigationBarTitleDisplayMode(.inline)
@@ -102,6 +105,27 @@ extension GameView {
 }
 
 extension GameView {
+  var instructionsCard: some View {
+    SwipeableCardView(backgroundColor: Color("Lead"), direction: $game.swipeDirection) {
+      VStack {
+        Text("How to play".uppercased())
+          .font(.title3)
+          .fontWeight(.heavy)
+          .padding(.bottom, 24)
+        Text(game.instructions.uppercased())
+      }
+      .font(.headline)
+      .multilineTextAlignment(.center)
+      .foregroundColor(.white)
+      .padding(40)
+      .blur(radius: game.swipeDirection != .none ? 4 : 0)
+    } completion: { _ in
+      game.dismissInstructionsCard()
+    }
+  }
+}
+
+extension GameView {
   var skipOverlay: some View {
     HStack {
       ZStack(alignment: .leading) {
@@ -115,7 +139,6 @@ extension GameView {
           .opacity(0.8)
           .frame(width: 200, height: 800)
       }
-
       Spacer()
     }
     .opacity(game.swipeDirection == .left ? 1 : 0)
@@ -147,9 +170,9 @@ extension GameView {
   func toolbarContent() -> some ToolbarContent {
     ToolbarItem(placement: .navigationBarTrailing) {
       Text("\(game.questionNumber) of \(game.questionCount)")
-        .opacity(game.state == .ended ? 0 : 1)
+        .opacity(game.state == .started ? 1 : 0)
         .animation(
-          .spring(), value: game.state == .ended)
+          .spring(), value: game.state == .started)
     }
   }
 }

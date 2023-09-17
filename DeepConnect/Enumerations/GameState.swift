@@ -1,8 +1,7 @@
 import Foundation
 
 enum GameState {
-  case notStarted
-  case instructions
+  case startMenu
   case started
   case ended
 }
