@@ -2,7 +2,6 @@ import SwiftUI
 
 struct GameView: View {
   @StateObject var game = GameViewModel()
-  @State var swipeDirection = SwipeDirection.none
 
   var body: some View {
     NavigationStack {
@@ -19,6 +18,7 @@ struct GameView: View {
       .toolbar(content: toolbarContent)
       .navigationTitle("Deep Connect")
       .navigationBarTitleDisplayMode(.inline)
+      .preferredColorScheme(.light)
     }
   }
 }
@@ -40,13 +40,13 @@ extension GameView {
   var questionCards: some View {
     ZStack {
       ForEach(game.questions.reversed()) { question in
-        SwipeableCardView(backgroundColor: .white, direction: $swipeDirection) {
+        SwipeableCardView(backgroundColor: .white, direction: $game.swipeDirection) {
           Text(question.prompt.uppercased())
             .font(.headline)
             .multilineTextAlignment(.center)
             .foregroundColor(.black)
             .padding(40)
-            .blur(radius: swipeDirection != .none ? 4 : 0)
+            .blur(radius: game.swipeDirection != .none ? 4 : 0)
         } completion: { swipeDirection in
           game.nextCard(with: swipeDirection)
         }
@@ -118,7 +118,7 @@ extension GameView {
 
       Spacer()
     }
-    .opacity(swipeDirection == .left ? 1 : 0)
+    .opacity(game.swipeDirection == .left ? 1 : 0)
     .frame(width: UIScreen.main.bounds.width)
   }
 
@@ -137,7 +137,7 @@ extension GameView {
           .frame(width: 200, height: 800)
       }
     }
-    .opacity(swipeDirection == .right ? 1 : 0)
+    .opacity(game.swipeDirection == .right ? 1 : 0)
     .frame(width: UIScreen.main.bounds.width)
   }
 }

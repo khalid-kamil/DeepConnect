@@ -8,6 +8,7 @@ class GameViewModel: ObservableObject {
   // MARK: - Wrapped Properties
   @Published private(set) var state = GameState.notStarted
   @Published private(set) var questionNumber = 1
+  @Published var swipeDirection = SwipeDirection.none
   
   // MARK: - Properties
   /// All of the questions.
