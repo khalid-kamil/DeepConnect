@@ -145,11 +145,11 @@ extension GameView {
 extension GameView {
   @ToolbarContentBuilder
   func toolbarContent() -> some ToolbarContent {
-      ToolbarItem(placement: .navigationBarTrailing) {
-        Text("\(game.questionNumber) of \(game.questionCount)")
-          .opacity(game.state == .ended ? 0 : 1)
-          .animation(
-            .spring(), value: game.state == .ended)
-      }
+    ToolbarItem(placement: .navigationBarTrailing) {
+      Text("\(game.questionNumber) of \(game.questionCount)")
+        .opacity(game.state == .ended ? 0 : 1)
+        .animation(
+          .spring(), value: game.state == .ended)
+    }
   }
 }
